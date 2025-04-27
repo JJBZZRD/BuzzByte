@@ -28,3 +28,7 @@ cd docker
 1. Set up the Next.js application
 2. Configure Nginx
 3. Start the services
+
+## Contact
+
+For questions or support, please open an issue on GitHub.
