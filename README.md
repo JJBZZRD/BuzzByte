@@ -13,3 +13,18 @@ A modern web application built with Next.js, featuring analytics tracking and pr
 ## Getting Started
 
 See the documentation in the nextjs directory for development instructions.
+
+## Installation
+
+### Using Docker
+
+```bash
+cd docker
+./start.sh
+```
+
+### Manual Setup
+
+1. Set up the Next.js application
+2. Configure Nginx
+3. Start the services
