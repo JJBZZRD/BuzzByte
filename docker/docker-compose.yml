@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  nextjs:
+    build:
+      context: ../nextjs
+      dockerfile: ../docker/nextjs.Dockerfile
+    container_name: buzzByte-nextjs
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=file:/app/prisma/database.db
+    volumes:
+      - ../nextjs/prisma/:/app/prisma/
+      - ../logs/nextjs:/app/logs
+      - ../nextjs/public/downloads:/app/public/downloads
+      - ../nextjs/public/images:/app/public/images
+      - ../nextjs/public/uploads:/app/public/uploads
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:3000 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  nginx:
+    build:
+      context: ../nginx
+      dockerfile: ../docker/nginx.Dockerfile
+    container_name: buzzByte-nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - nextjs
+    volumes:
+      - ../nginx/conf:/etc/nginx/conf.d
+      - ../nginx/ssl:/etc/nginx/ssl
+      - ../nginx/certbot/conf:/etc/letsencrypt
+      - ../nginx/certbot/www:/var/www/certbot
+      - ../logs/nginx:/var/log/nginx
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "nginx -t || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  app-network:
+    driver: bridge

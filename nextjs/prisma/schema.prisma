@@ -1,0 +1,114 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./database.db"
+}
+
+
+// ===== Simplified Analytics Models =====
+
+model Visitor {
+  id         String    @id @default(uuid())
+  firstSeen  DateTime  @default(now())
+  lastSeen   DateTime  @default(now())
+  visitCount Int       @default(1)
+  referrer   String?
+
+  // Relations
+  pageViews  PageView[]
+  sessions   Session[]  // Relation to sessions
+  events     AnalyticsEvent[] // Relation to events
+}
+
+model Session {
+  id            String   @id @default(uuid())
+  startTime     DateTime @default(now())
+  endTime       DateTime @default(now())
+  sessionDuration Int?    // Duration in seconds
+  pageCount     Int      @default(1)
+  
+  // Foreign keys
+  visitorId     String
+  
+  // Relations
+  visitor       Visitor  @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  pageViews     PageView[]
+}
+
+model PageView {
+  id        String   @id @default(uuid())
+  path      String   // URL path
+  pageName  String   // e.g. 'home', 'about', 'project', etc.
+  visitedAt DateTime @default(now())
+  duration  Int?     // Duration in milliseconds that the user spent on this page
+  
+  // Foreign keys
+  visitorId String
+  sessionId String?  // Link to session
+
+  // Relations
+  visitor   Visitor  @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  session   Session? @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+  events    AnalyticsEvent[] // Events associated with this page view
+}
+
+model AnalyticsEvent {
+  id          String    @id @default(uuid())
+  eventName   String    // Name of the event
+  eventType   String    @default("custom") // Type of event (e.g., "click", "view", "custom")
+  properties  String?   // JSON string of event properties
+  timestamp   DateTime  @default(now())
+  
+  // Foreign keys
+  visitorId   String
+  pageViewId  String?
+  
+  // Relations
+  visitor     Visitor   @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  pageView    PageView? @relation(fields: [pageViewId], references: [id], onDelete: SetNull)
+}
+
+model DailySummary {
+  id             Int      @id @default(autoincrement())
+  date           DateTime @unique
+  totalVisits    Int      @default(0)
+  uniqueVisitors Int      @default(0)
+  sessionCount   Int      @default(0)  // Number of sessions per day
+  
+  // Popular pages on this day
+  popularPages   Json?    // Will store array of {path, count} objects
+  
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+// Admin user model for authentication
+model Admin {
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  passwordHash String
+  role         String   @default("admin")
+  lastLogin    DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// Message model for contact form submissions
+model Message {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
