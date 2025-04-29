@@ -140,6 +140,23 @@ export default function ChemUclInventorySystemPage() {
             </p>
           </div>
 
+          {/* Figma Prototype */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+              Interactive Prototype
+            </h2>
+            <div className="relative w-full overflow-hidden rounded-xl shadow-sm">
+              <iframe 
+                style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }} 
+                width="100%" 
+                height="450" 
+                src="https://embed.figma.com/proto/08hNssNptjdDfEy9d3sonW/Prototype-App-Eng?node-id=13-484&starting-point-node-id=13%3A484&embed-host=share" 
+                allowFullScreen
+                className="mx-auto"
+              ></iframe>
+            </div>
+          </div>
+
           {/* Video section */}
           {project.videoEmbed && (
             <div className="mb-12">

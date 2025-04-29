@@ -406,7 +406,6 @@ export const projects: Project[] = [
       { id: 2, text: "Implemented QR code scanning for streamlined inventory updates" },
       { id: 3, text: "Served as primary contact for department stakeholders, providing regular updates" }
     ],
-    videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     images: [
       { id: 0, url: "/images/projects/chemucl-inventory-system/project-image.png", alt: "ChemUCL Inventory System image" }
     ],

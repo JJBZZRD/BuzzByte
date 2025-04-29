@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JB Portfolio",
-  description: "Portfolio website showcasing projects and skills",
+  title: "BuzzByte",
+  description: "Portfolio website showcasing projects and skills of John Buzzard, Software Engineer",
 };
 
 export default function RootLayout({
@@ -32,6 +32,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <ThemeScript />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
