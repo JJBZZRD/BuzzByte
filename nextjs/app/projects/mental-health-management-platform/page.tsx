@@ -256,31 +256,6 @@ export default function MentalHealthManagementPlatformPage() {
                   </svg>
                 </a>
               ))}
-              
-              {/* Project Report Download Button */}
-              {project.reportUrl && (
-                <a
-                  href={project.reportUrl}
-                  download
-                  className="inline-flex items-center px-6 py-3 rounded-full bg-purple-600 hover:bg-purple-700 text-white transition-colors shadow-sm"
-                >
-                  Download Report
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 ml-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                    />
-                  </svg>
-                </a>
-              )}
             </div>
           )}
         </div>
