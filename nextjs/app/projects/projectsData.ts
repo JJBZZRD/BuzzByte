@@ -462,63 +462,112 @@ export const projects: Project[] = [
     id: 4,
     slug: "humanitarian-management-system",
     title: "Humanitarian Management System",
-    description: "Collaborated on a team project to build a system that enables efficient resource organisation and support for refugees by admins and volunteers.",
-    longDescription: "The Humanitarian Management System was developed to address the challenges faced by refugee support organisations in efficiently allocating resources and coordinating volunteer efforts. This Python-based desktop application provides a comprehensive solution for tracking aid supplies, managing volunteer schedules, and optimising resource distribution to refugee communities.",
+    description: "Developed a Python-based application with a Tkinter interface to support humanitarian agencies in efficiently managing refugee data, resource allocation, and volunteer coordination during crisis situations.",
+    longDescription: "The Humanitarian Management System was developed as a Python-based application with a user-friendly graphical interface using Tkinter, designed to support humanitarian agencies during crisis situations. Its primary objective was to efficiently manage refugee data, resource allocation, and volunteer coordination across multiple refugee camps.\n\nThe project involved developing a robust and intuitive system enabling a humanitarian agency to effectively manage and distribute essential resources such as food packets and medical supplies. It supported two types of users: administrators and humanitarian volunteers, each with specific roles and permissions within the system.\n\nAdministrators could create, manage, and conclude humanitarian plans, allocate resources based on real-time camp populations, and manage volunteer accounts (activate, deactivate, or delete). Volunteers were empowered to manage refugee data, including creating refugee profiles and updating camp information, thus ensuring accurate and timely distribution of aid.\n\nEnhancing the core functionalities, the application included comprehensive camp statistics, detailed audit logs for activity tracking, and robust data export functionalities. The use of a Tkinter interface significantly improved data visualisation, usability, and overall user experience.\n\nThe system prioritised data integrity and persistence, maintaining realistic and accurate data across sessions, thereby facilitating continuous and reliable operation during emergencies.",
     role: "System Designer & Developer",
     tags: [
       { id: 0, name: "Python" },
       { id: 1, name: "Tkinter" },
       { id: 2, name: "ECB Pattern" },
-      { id: 3, name: "UI Design" }
+      { id: 3, name: "UI Design" },
+      { id: 4, name: "Data Persistence" },
+      { id: 5, name: "Access Control" }
     ],
     links: [
-      { id: 0, type: "GitHub", url: "https://github.com/JJBZZRD" },
-      { id: 1, type: "Documentation", url: "#" }
+      { id: 0, type: "GitHub", url: "https://github.com/JJBZZRD/Introductory-Programming" },
     ],
     imageGradient: "from-orange-600/20 to-red-600/20",
     highlights: [
-      { id: 0, text: "Utilised the ECB (Entity-Control-Boundary) design pattern in Python" },
-      { id: 1, text: "Implemented a custom UI in Tkinter to enhance user experience" },
-      { id: 2, text: "Designed features for real-time resource tracking and coordination" },
-      { id: 3, text: "Improved collaboration among administrators and volunteers" }
+      { id: 0, text: "Utilised the ECB (Entity-Control-Boundary) design pattern in Python for a maintainable architecture" },
+      { id: 1, text: "Implemented a custom Tkinter UI with enhanced data visualisation capabilities" },
+      { id: 2, text: "Designed multi-role access control with distinct permission levels for administrators and volunteers" },
+      { id: 3, text: "Created real-time resource allocation and tracking features for dynamic distribution based on needs" }
     ],
-    videoEmbed: "https://www.youtube.com/embed/NCIg7CG8qw0?si=kHfv_PMK6UfgRLet",
     images: [
-      { id: 0, url: "/images/projects/humanitarian-management-system/project-image.jpg", alt: "Humanitarian Management System image" }
+      { id: 0, url: "/images/projects/humanitarian-management-system/project-image.png", alt: "Humanitarian Management System image" }
+    ],
+    carouselImages: [
+      { 
+        id: 0, 
+        url: "/images/projects/humanitarian-management-system/carousel/1. Login.png", 
+        alt: "Login Screen",
+        description: "Secure login interface for administrators and volunteers with role-based access control."
+      },
+      { 
+        id: 1, 
+        url: "/images/projects/humanitarian-management-system/carousel/2. Admin_panel.png", 
+        alt: "Admin Dashboard",
+        description: "Administrative dashboard providing quick access to all system functions and real-time statistics."
+      },
+      { 
+        id: 2, 
+        url: "/images/projects/humanitarian-management-system/carousel/3. Manage_Plan.png", 
+        alt: "Resource Management",
+        description: "Resource allocation planning interface allowing administrators to organise aid distribution efficiently."
+      },
+      { 
+        id: 3, 
+        url: "/images/projects/humanitarian-management-system/carousel/4. Manage_Volunteers.png", 
+        alt: "Volunteer Management",
+        description: "Comprehensive volunteer management screen for tracking availability, skills, and assignments."
+      },
+      { 
+        id: 4, 
+        url: "/images/projects/humanitarian-management-system/carousel/5. Edit_Volunteer.png", 
+        alt: "Edit Volunteer Profile",
+        description: "Interface for updating volunteer information, qualifications, and scheduling preferences."
+      },
+      { 
+        id: 5, 
+        url: "/images/projects/humanitarian-management-system/carousel/6. Audit_Logs.png", 
+        alt: "System Audit Logs",
+        description: "Detailed audit logs providing complete traceability for all system actions and resource movements."
+      },
+      { 
+        id: 6, 
+        url: "/images/projects/humanitarian-management-system/carousel/6. View_Stats.png", 
+        alt: "Statistics Dashboard",
+        description: "Data visualisation tools providing insights into resource utilisation and operational efficiency."
+      }
     ],
     technologies: [
       {
         id: 0,
         name: "ECB Architecture Pattern",
-        description: "Applied the Entity-Control-Boundary pattern to create a maintainable, modular codebase with clear separation of concerns."
+        description: "Applied the Entity-Control-Boundary pattern to create a maintainable, modular codebase with clear separation of concerns, facilitating future enhancements and ensuring code quality."
       },
       {
         id: 1,
-        name: "Custom Tkinter UI",
-        description: "Built a custom-themed Tkinter interface with responsive layouts and intuitive workflows for non-technical users."
+        name: "Tkinter UI Framework",
+        description: "Built a custom-themed Tkinter interface with responsive layouts and intuitive workflows for humanitarian workers, enhancing data visualisation and accessibility even in high-pressure situations."
       },
       {
         id: 2,
-        name: "Data Visualisation",
-        description: "Integrated matplotlib-based visualisations to provide insights into resource allocation and utilisation."
+        name: "Python Data Persistence",
+        description: "Implemented robust data persistence mechanisms using built-in Python libraries, ensuring data integrity and reliability across multiple application sessions during crisis management."
       }
     ],
     challenges: [
       {
         id: 0,
-        title: "User-Friendly Design",
-        description: "Created an intuitive interface that could be easily used by volunteers with varying levels of technical expertise."
+        title: "Data Persistence and Integrity",
+        description: "Addressed by implementing robust validation mechanisms and persistent storage solutions, ensuring data accuracy and reliability over multiple sessions in potentially unstable environments."
       },
       {
         id: 1,
-        title: "Offline Functionality",
-        description: "Implemented a robust data synchronisation system that allows the application to function in areas with limited internet connectivity."
+        title: "Multi-Role User Access",
+        description: "Solved by designing clear and distinct permission levels and access rights for administrators and volunteers, maintaining operational security and data privacy while supporting diverse workflow needs."
+      },
+      {
+        id: 2,
+        title: "Efficient Resource Allocation",
+        description: "Managed through real-time tracking and dynamic allocation features, allowing resources to be quickly redistributed based on changing camp populations and needs during humanitarian missions."
+      },
+      {
+        id: 3,
+        title: "Simplified Refugee Management",
+        description: "Overcame by designing a streamlined interface and easy-to-use data entry procedures, accommodating quick updates even under stressful conditions with minimal training requirements."
       }
-    ],
-    outcomes: [
-      { id: 0, text: "Successfully deployed to three refugee support organisations in the UK" },
-      { id: 1, text: "Reduced administrative overhead by 40% through automated resource tracking" },
-      { id: 2, text: "Improved resource allocation efficiency, allowing the organisations to serve 25% more refugees with the same resources" }
     ]
   }
 ];

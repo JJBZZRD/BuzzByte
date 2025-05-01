@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { getProjectBySlug } from "../projectsData";
+import ImageCarousel from "@/app/components/ImageCarousel";
 
 // Function to generate a consistent color for a tag based on its name
 function getTagColor(tagName: string) {
@@ -139,6 +140,19 @@ export default function HumanitarianManagementSystemPage() {
               {project.longDescription}
             </p>
           </div>
+
+          {/* Image carousel if available */}
+          {project.carouselImages && project.carouselImages.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                Project Gallery
+              </h2>
+              <ImageCarousel 
+                images={project.carouselImages}
+                className="rounded-xl shadow-sm"
+              />
+            </div>
+          )}
 
           {/* Video section */}
           {project.videoEmbed && (
