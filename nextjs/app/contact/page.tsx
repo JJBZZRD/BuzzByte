@@ -203,7 +203,7 @@ const ContactPage = () => {
             <h2 className="text-xl font-semibold mb-4 text-center">Professional Links</h2>
             <div className="flex flex-wrap justify-center gap-6">
               <a 
-                href="#" 
+                href="https://github.com/JJBZZRD" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-foreground/10 transition-colors"
@@ -214,7 +214,7 @@ const ContactPage = () => {
                 <span>GitHub</span>
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/john-buzzard-a73051316/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-foreground/10 transition-colors"
