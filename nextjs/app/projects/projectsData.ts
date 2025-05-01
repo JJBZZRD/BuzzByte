@@ -383,8 +383,8 @@ export const projects: Project[] = [
     id: 3,
     slug: "chemucl-inventory-system",
     title: "ChemUCL Inventory System",
-    description: "Collaborated with UCL Department of Chemistry to build an inventory system managing over 26,000 chemicals, enhancing lab safety and organisation.",
-    longDescription: "The ChemUCL Inventory System was developed to address the critical need for accurate chemical inventory management within UCL's Chemistry Department. With over 26,000 chemicals to track across multiple laboratories, the system provides real-time inventory monitoring, safety information access, and efficient procurement workflows.",
+    description: "Developed a dedicated chemical inventory management web application for UCL Chemistry Department to track over 26,000 chemicals, implementing QR code technology for streamlined auditing and location tracking.",
+    longDescription: "The ChemUCL project developed a dedicated chemical inventory management web application tailored specifically for the UCL Chemistry Department. The goal was to regain control over the inventory data previously hosted externally in Quartzy, improve the efficiency of chemical tracking and auditing processes, and implement QR code technology for easier management.\n\nChemUCL was created to address critical issues such as high costs, data privacy, and inefficient item tracking. The application integrates QR code functionality for streamlined chemical auditing and location tracking, enhancing both usability and efficiency.\n\nThe development involved comprehensive requirements gathering, system design, implementation, testing, and deployment stages. ChemUCL supports multiple user roles including Administrators, Staff, Temporary Staff, and Research Students, each with defined access levels and functionalities, particularly concerning the management and visibility of restricted chemicals.\n\nKey features include chemical inventory lists, location management, user and group administration, QR code scanning, and system logging for regulatory compliance reporting. The application was built using robust and scalable technologies ensuring performance, reliability, and maintainability.",
     role: "Full-Stack Developer",
     tags: [
       { id: 0, name: "Next.js 14" },
@@ -392,19 +392,18 @@ export const projects: Project[] = [
       { id: 2, name: "PostgreSQL" },
       { id: 3, name: "Prisma" },
       { id: 4, name: "Azure" },
-      { id: 5, name: "Nginx" },
-      { id: 6, name: "QR Scanning" }
+      { id: 5, name: "React" },
+      { id: 6, name: "Material UI" },
+      { id: 7, name: "QR Code Integration" }
     ],
     links: [
-      { id: 0, type: "GitHub", url: "https://github.com/JJBZZRD" },
-      { id: 1, type: "Demo", url: "#" }
     ],
     imageGradient: "from-green-600/20 to-blue-600/20",
     highlights: [
-      { id: 0, text: "Developed a mobile-responsive web app using Next.js 14 and Node.js" },
-      { id: 1, text: "Deployed on Azure with Nginx and integrated PostgreSQL database via Prisma schema" },
-      { id: 2, text: "Implemented QR code scanning for streamlined inventory updates" },
-      { id: 3, text: "Served as primary contact for department stakeholders, providing regular updates" }
+      { id: 0, text: "Developed a responsive web app using Next.js, Node.js, and React with Material UI" },
+      { id: 1, text: "Implemented a PostgreSQL database with Prisma ORM for managing 26,000+ chemicals" },
+      { id: 2, text: "Created QR code scanning functionality for streamlined inventory auditing and tracking" },
+      { id: 3, text: "Deployed on Azure cloud infrastructure ensuring security and scalability" }
     ],
     images: [
       { id: 0, url: "/images/projects/chemucl-inventory-system/project-image.png", alt: "ChemUCL Inventory System image" }
@@ -412,36 +411,51 @@ export const projects: Project[] = [
     technologies: [
       {
         id: 0,
-        name: "Next.js 14 with App Router",
-        description: "Utilised Next.js 14's app router for optimised server components and client-side interactivity where needed."
+        name: "Next.js 14 with React",
+        description: "Utilized Next.js 14 and React with Material UI to create an intuitive, responsive, and visually coherent user interface, improving overall user experience."
       },
       {
         id: 1,
-        name: "Prisma ORM",
-        description: "Implemented Prisma for type-safe database access, migrations, and relationship management."
+        name: "PostgreSQL with Prisma ORM",
+        description: "Implemented a robust relational database with Prisma for type-safe database access, effectively managing the extensive chemical inventory data with complex relationships."
       },
       {
         id: 2,
         name: "QR Code Integration",
-        description: "Developed a mobile-friendly QR scanning system to quickly update chemical status and location information."
+        description: "Developed a flexible QR code system allowing codes to be linked dynamically with multiple types of data, such as chemicals and locations, enabling easy identification and tracking."
+      },
+      {
+        id: 3,
+        name: "Azure Cloud Infrastructure",
+        description: "Deployed on Azure cloud services to ensure a secure and scalable hosting environment, facilitating smooth operation and reliable access to the inventory system."
       }
     ],
     challenges: [
       {
         id: 0,
-        title: "Complex Data Relationships",
-        description: "Designed a database schema that accurately represents complex relationships between chemicals, locations, safety data, and user permissions."
+        title: "Integration with Previous Dataset",
+        description: "Designed an effective migration strategy to import existing chemical data from Quartzy, ensuring data integrity and consistency when transitioning to the new system."
       },
       {
         id: 1,
-        title: "Performance Optimisation",
-        description: "Implemented pagination, caching, and optimised queries to ensure fast performance despite the large dataset of 26,000+ chemicals."
+        title: "Data Schema for Multiuse of QR Codes",
+        description: "Implemented a flexible schema allowing QR codes to be linked dynamically with multiple types of data, such as chemicals and locations, creating a versatile tracking system."
+      },
+      {
+        id: 2,
+        title: "Adapting to Existing Technician Workflows",
+        description: "Conducted extensive user consultation and iterative design cycles, ensuring that the application streamlined and enhanced existing workflows rather than disrupting them."
+      },
+      {
+        id: 3,
+        title: "Performance Optimization",
+        description: "Implemented pagination, caching, and optimized queries to ensure fast performance despite the large dataset of 26,000+ chemicals across multiple laboratories."
       }
     ],
     outcomes: [
-      { id: 0, text: "Reduced chemical audit time by 60% through efficient QR-based tracking" },
-      { id: 1, text: "Improved safety compliance by providing instant access to chemical safety data" },
-      { id: 2, text: "Streamlined procurement by automating low-stock notifications and reorder processes" }
+      { id: 0, text: "Successfully created a secure and user-friendly inventory management solution, giving the department control over their chemical data" },
+      { id: 2, text: "Enhanced regulatory compliance through comprehensive system logging and improved restricted chemical management" },
+      { id: 3, text: "Provided multi-role access control ensuring appropriate data visibility based on user responsibilities" }
     ]
   },
   {
